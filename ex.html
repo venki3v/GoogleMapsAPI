@@ -1,0 +1,61 @@
+<!doctype html>
+<html >
+  <head>
+    <meta charset="utf-8">
+    <title>Google Maps Example</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    
+
+    <style>
+      html, body, #map-canvas {
+        height: 700px;
+        margin: 0px;
+        padding: 0px
+      }
+    </style>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAcvkc-upIFEZjS7iCpNRvq87X0_Meqp8U">
+      
+    </script>
+
+  </head>
+  <body>
+    
+    <div id="map-canvas"></div>
+    <script>
+        var image = {
+    url: 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png',
+    // This marker is 20 pixels wide by 32 pixels high.
+    size: new google.maps.Size(20, 32),
+    // The origin for this image is (0, 0).
+    origin: new google.maps.Point(0, 0),
+    // The anchor for this image is the base of the flagpole at (0, 32).
+    anchor: new google.maps.Point(0, 32)
+  };
+        var myLatLng = {lat: 51.38254, lng: -2.362804};
+        map = new google.maps.Map(document.getElementById('map-canvas'), {
+        zoom: 15,
+        center: myLatLng
+      });
+        var locs = [ ["51.38254", "-2.362804"], ["51.235249", "-2.297804"], ["51.086126", "-2.210767"]];
+        var marker, i;
+        for (i = 0; i < locs.length; i++) {  
+          marker = new google.maps.Marker({
+            position: new google.maps.LatLng(locs[i][0], locs[i][1]),
+            map: map,
+            icon: image
+          });
+        }
+
+    </script>
+    
+    <!-- Map Configuration and data -->
+    
+
+    <br>
+    <div class="container">
+      <a href="/">Broadcast Page (Home)</a>
+    </div>
+  </body>
+</html>
